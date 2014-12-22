@@ -1,4 +1,4 @@
-kali Cookbook
+kali Cookbook | [![Cookbook Version](https://img.shields.io/cookbook/v/kali.svg)](https://community.opscode.com/cookbooks/kali) [![Build Status](https://travis-ci.org/sliim-cookbooks/kali.svg?branch=master)](https://travis-ci.org/sliim-cookbooks/kali) 
 ==============
 This cookbook installs and configures kali linux for debian OS.  
 It provides an easy way to manage your pentest environment with Chef!
