@@ -10,7 +10,7 @@ Requirements
 
 #### platforms
 The following platforms and versions are tested and supported using Opscode's test-kitchen.  
-- `Debian 7.2`
+- `Debian 7.6`
 
 Usage
 -----
