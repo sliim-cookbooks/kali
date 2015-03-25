@@ -23,6 +23,8 @@ apt_repository 'kali' do
   distribution 'kali'
   components ['main', 'non-free', 'contrib']
   deb_src true
+  keyserver 'keys.gnupg.net'
+  key 'ED444FF07D8D0BF6'
 end
 
 apt_repository 'kali-security' do
@@ -30,6 +32,8 @@ apt_repository 'kali-security' do
   distribution 'kali/updates'
   components ['main', 'non-free', 'contrib']
   deb_src false
+  keyserver 'keys.gnupg.net'
+  key 'ED444FF07D8D0BF6'
 end
 
 apt_preference 'kali' do
