@@ -18,28 +18,30 @@
 
 include_recipe 'apt'
 
-apt_repository 'kali' do
-  uri 'http://http.kali.org/kali'
-  distribution 'kali'
-  components ['main', 'non-free', 'contrib']
-  deb_src true
-  keyserver 'keys.gnupg.net'
-  key 'ED444FF07D8D0BF6'
-end
+unless node['platform_version'].start_with?('Kali')
+  apt_repository 'kali' do
+    uri 'http://http.kali.org/kali'
+    distribution 'kali'
+    components ['main', 'non-free', 'contrib']
+    deb_src true
+    keyserver 'keys.gnupg.net'
+    key 'ED444FF07D8D0BF6'
+  end
 
-apt_repository 'kali-security' do
-  uri 'http://security.kali.org/kali-security'
-  distribution 'kali/updates'
-  components ['main', 'non-free', 'contrib']
-  deb_src false
-  keyserver 'keys.gnupg.net'
-  key 'ED444FF07D8D0BF6'
-end
+  apt_repository 'kali-security' do
+    uri 'http://security.kali.org/kali-security'
+    distribution 'kali/updates'
+    components ['main', 'non-free', 'contrib']
+    deb_src false
+    keyserver 'keys.gnupg.net'
+    key 'ED444FF07D8D0BF6'
+  end
 
-apt_preference 'kali' do
-  glob '*'
-  pin 'origin http.kali.org'
-  pin_priority '700'
+  apt_preference 'kali' do
+    glob '*'
+    pin 'origin http.kali.org'
+    pin_priority '700'
+  end
 end
 
 package 'kali-linux'
