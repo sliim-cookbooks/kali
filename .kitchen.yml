@@ -5,8 +5,17 @@ driver_config:
 
 platforms:
   - name: debian-7.6
+  - name: debian-8.1
 
 suites:
-  - name: kali
+  - name: kali-2.0
     run_list:
       - recipe[kali]
+    includes: [debian-8.1]
+  - name: kali-1.1
+    run_list:
+      - recipe[kali]
+    includes: [debian-7.6]
+    attributes:
+      kali:
+        distribution: kali

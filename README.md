@@ -12,6 +12,30 @@ Requirements
 The following platforms and versions are tested and supported using Opscode's test-kitchen.  
 - `Debian 7.6`
 
+Attributes
+----------
+#### faraday::default
+<table>
+<tr>
+<th>Key</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+<tr>
+<td><tt>['kali']['distribution']</tt></td>
+<td>String</td>
+<td>Distribution to use for apt repository</td>
+<td><tt>sana</tt></td>
+</tr>
+<tr>
+<td><tt>['kali']['keyserver']</tt></td>
+<td>String</td>
+<td>GPG keys server</td>
+<td><tt>pgp.mit.edu</tt></td>
+</tr>
+</table>
+
 Usage
 -----
 #### kali::default

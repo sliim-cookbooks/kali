@@ -8,20 +8,20 @@ describe 'kali::default' do
   it 'should create apt source for kali repository' do
     expect(subject).to add_apt_repository('kali')
       .with(uri: 'http://http.kali.org/kali',
-            distribution: 'kali',
+            distribution: 'sana',
             components: ['main', 'non-free', 'contrib'],
             deb_src: true,
-            keyserver: 'keys.gnupg.net',
+            keyserver: 'pgp.mit.edu',
             key: 'ED444FF07D8D0BF6')
   end
 
   it 'should create apt source for kali security updates' do
     expect(subject).to add_apt_repository('kali-security')
       .with(uri: 'http://security.kali.org/kali-security',
-            distribution: 'kali/updates',
+            distribution: 'sana/updates',
             components: ['main', 'non-free', 'contrib'],
             deb_src: false,
-            keyserver: 'keys.gnupg.net',
+            keyserver: 'pgp.mit.edu',
             key: 'ED444FF07D8D0BF6')
   end
 

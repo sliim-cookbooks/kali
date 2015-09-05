@@ -21,19 +21,19 @@ include_recipe 'apt'
 unless node['platform_version'].start_with?('Kali')
   apt_repository 'kali' do
     uri 'http://http.kali.org/kali'
-    distribution 'kali'
+    distribution node['kali']['distribution']
     components ['main', 'non-free', 'contrib']
     deb_src true
-    keyserver 'keys.gnupg.net'
+    keyserver node['kali']['keyserver']
     key 'ED444FF07D8D0BF6'
   end
 
   apt_repository 'kali-security' do
     uri 'http://security.kali.org/kali-security'
-    distribution 'kali/updates'
+    distribution "#{node['kali']['distribution']}/updates"
     components ['main', 'non-free', 'contrib']
     deb_src false
-    keyserver 'keys.gnupg.net'
+    keyserver node['kali']['keyserver']
     key 'ED444FF07D8D0BF6'
   end
 
