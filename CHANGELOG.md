@@ -3,6 +3,12 @@ kali CHANGELOG
 
 This file is used to list changes made in each version of the kali cookbook.
 
+0.2.0
+-----
+- Support for Kali 2.0
+- New attributes for apt repository
+- Timeout attribute for packages installation 
+
 0.1.1
 -----
 - Packages authentication with gpg signature
