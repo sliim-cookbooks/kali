@@ -15,7 +15,7 @@ The following platforms and versions are tested and supported using Opscode's te
 
 Attributes
 ----------
-#### faraday::default
+#### kali::default
 <table>
 <tr>
 <th>Key</th>
