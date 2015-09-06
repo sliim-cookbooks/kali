@@ -7,5 +7,6 @@ describe 'kali::forensic' do
 
   it 'should install kali-linux-forensic package' do
     expect(subject).to install_package('kali-linux-forensic')
+      .with(timeout: 1800)
   end
 end

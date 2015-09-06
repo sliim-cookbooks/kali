@@ -16,4 +16,6 @@
 # limitations under the License.
 #
 
-package 'kali-linux-wireless'
+package 'kali-linux-wireless' do
+  timeout node['kali']['apt_timeout']
+end

@@ -16,4 +16,6 @@
 # limitations under the License.
 #
 
-package 'kali-linux-sdr'
+package 'kali-linux-sdr' do
+  timeout node['kali']['apt_timeout']
+end

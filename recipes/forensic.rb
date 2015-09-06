@@ -16,4 +16,6 @@
 # limitations under the License.
 #
 
-package 'kali-linux-forensic'
+package 'kali-linux-forensic' do
+  timeout node['kali']['apt_timeout']
+end

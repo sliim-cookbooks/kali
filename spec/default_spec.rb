@@ -33,6 +33,6 @@ describe 'kali::default' do
   end
 
   it 'should install kali-linux package' do
-    expect(subject).to install_package('kali-linux')
+    expect(subject).to install_package('kali-linux').with(timeout: 1800)
   end
 end

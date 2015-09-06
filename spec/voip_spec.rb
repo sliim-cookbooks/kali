@@ -6,6 +6,6 @@ describe 'kali::voip' do
   subject { ChefSpec::ServerRunner.new.converge(described_recipe) }
 
   it 'should install kali-linux-voip package' do
-    expect(subject).to install_package('kali-linux-voip')
+    expect(subject).to install_package('kali-linux-voip').with(timeout: 1800)
   end
 end

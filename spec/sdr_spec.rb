@@ -6,6 +6,6 @@ describe 'kali::sdr' do
   subject { ChefSpec::ServerRunner.new.converge(described_recipe) }
 
   it 'should install kali-linux-sdr package' do
-    expect(subject).to install_package('kali-linux-sdr')
+    expect(subject).to install_package('kali-linux-sdr').with(timeout: 1800)
   end
 end

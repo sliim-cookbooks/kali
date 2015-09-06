@@ -44,4 +44,6 @@ unless node['platform_version'].start_with?('Kali')
   end
 end
 
-package 'kali-linux'
+package 'kali-linux' do
+  timeout node['kali']['apt_timeout']
+end

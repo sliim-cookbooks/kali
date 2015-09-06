@@ -16,4 +16,6 @@
 # limitations under the License.
 #
 
-package 'kali-linux-gpu'
+package 'kali-linux-gpu' do
+  timeout node['kali']['apt_timeout']
+end

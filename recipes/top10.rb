@@ -16,4 +16,6 @@
 # limitations under the License.
 #
 
-package 'kali-linux-top10'
+package 'kali-linux-top10' do
+  timeout node['kali']['apt_timeout']
+end

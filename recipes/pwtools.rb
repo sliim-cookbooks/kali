@@ -16,4 +16,6 @@
 # limitations under the License.
 #
 
-package 'kali-linux-pwtools'
+package 'kali-linux-pwtools' do
+  timeout node['kali']['apt_timeout']
+end

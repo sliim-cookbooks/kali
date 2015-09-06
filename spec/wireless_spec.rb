@@ -7,5 +7,6 @@ describe 'kali::wireless' do
 
   it 'should install kali-linux-wireless package' do
     expect(subject).to install_package('kali-linux-wireless')
+      .with(timeout: 1800)
   end
 end

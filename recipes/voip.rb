@@ -16,4 +16,6 @@
 # limitations under the License.
 #
 
-package 'kali-linux-voip'
+package 'kali-linux-voip' do
+  timeout node['kali']['apt_timeout']
+end

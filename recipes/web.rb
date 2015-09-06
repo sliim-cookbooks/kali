@@ -16,4 +16,6 @@
 # limitations under the License.
 #
 
-package 'kali-linux-web'
+package 'kali-linux-web' do
+  timeout node['kali']['apt_timeout']
+end

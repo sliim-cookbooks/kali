@@ -16,4 +16,6 @@
 # limitations under the License.
 #
 
-package 'kali-linux-rfid'
+package 'kali-linux-rfid' do
+  timeout node['kali']['apt_timeout']
+end

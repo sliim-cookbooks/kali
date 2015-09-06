@@ -16,4 +16,6 @@
 # limitations under the License.
 #
 
-package 'kali-linux-all'
+package 'kali-linux-all' do
+  timeout node['kali']['apt_timeout']
+end

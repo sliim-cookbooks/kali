@@ -6,6 +6,6 @@ describe 'kali::all' do
   subject { ChefSpec::ServerRunner.new.converge(described_recipe) }
 
   it 'should install kali-linux-all package' do
-    expect(subject).to install_package('kali-linux-all')
+    expect(subject).to install_package('kali-linux-all').with(timeout: 1800)
   end
 end

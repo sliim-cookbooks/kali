@@ -11,6 +11,7 @@ Requirements
 #### platforms
 The following platforms and versions are tested and supported using Opscode's test-kitchen.  
 - `Debian 7.6`
+- `Debian 8.1`
 
 Attributes
 ----------
@@ -33,6 +34,12 @@ Attributes
 <td>String</td>
 <td>GPG keys server</td>
 <td><tt>pgp.mit.edu</tt></td>
+</tr>
+<tr>
+<td><tt>['kali']['apt_timeout']</tt></td>
+<td>Interger</td>
+<td>Timeout for packages installation</td>
+<td><tt>1800</tt></td>
 </tr>
 </table>
 
