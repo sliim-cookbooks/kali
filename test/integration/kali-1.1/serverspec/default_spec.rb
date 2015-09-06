@@ -15,7 +15,8 @@ end
 describe file('/etc/apt/sources.list.d/kali-security.list') do
   it { should be_file }
   its(:content) do
-    should match(%r{deb *"http://security.kali.org/kali-security" kali/updates*})
+    should match(
+      %r{deb *"http://security.kali.org/kali-security" kali/updates*})
   end
 end
 
