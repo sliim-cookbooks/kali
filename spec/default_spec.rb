@@ -5,7 +5,7 @@ require_relative 'spec_helper'
 describe 'kali::default' do
   subject { ChefSpec::ServerRunner.new.converge(described_recipe) }
 
-  it 'should create apt source for kali repository' do
+  it 'adds apt_repository[kali]' do
     expect(subject).to add_apt_repository('kali')
       .with(uri: 'http://http.kali.org/kali',
             distribution: 'sana',
@@ -15,7 +15,7 @@ describe 'kali::default' do
             key: 'ED444FF07D8D0BF6')
   end
 
-  it 'should create apt source for kali security updates' do
+  it 'adds apt_repository[kali-security]' do
     expect(subject).to add_apt_repository('kali-security')
       .with(uri: 'http://security.kali.org/kali-security',
             distribution: 'sana/updates',
@@ -25,14 +25,14 @@ describe 'kali::default' do
             key: 'ED444FF07D8D0BF6')
   end
 
-  it 'should create apt preference file for kali repository' do
+  it 'adds apt_preference[kali]' do
     expect(subject).to add_apt_preference('kali')
       .with(glob: '*',
             pin: 'origin http.kali.org',
             pin_priority: '700')
   end
 
-  it 'should install kali-linux package' do
+  it 'installs package[kali-linux]' do
     expect(subject).to install_package('kali-linux').with(timeout: 1800)
   end
 end
