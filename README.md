@@ -43,6 +43,52 @@ Attributes
 </tr>
 </table>
 
+#### kali::rogue-ap
+<table>
+<tr>
+<th>Key</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+<tr>
+<td><tt>['kali']['rogue-ap'][interface']</tt></td>
+<td>String</td>
+<td>Wireles interface</td>
+<td><tt>wlan0</tt></td>
+</tr>
+<tr>
+<td><tt>['kali']['rogue-ap']['out_interface']</tt></td>
+<td>String</td>
+<td>Output interface</td>
+<td><tt>eth0</tt></td>
+</tr>
+<tr>
+<td><tt>['kali']['rogue-ap']['script_path']</tt></td>
+<td>String</td>
+<td>Path for rogue-ap.sh script</td>
+<td><tt>/root/rogue-ap.sh</tt></td>
+</tr>
+<tr>
+<td><tt>['kali']['rogue-ap']['packages']</tt></td>
+<td>Array</td>
+<td>List of packages to install</td>
+<td><tt>See attribute file</tt></td>
+</tr>
+<tr>
+<td><tt>['kali']['rogue-ap']['dnsmasq']</tt></td>
+<td>Hash</td>
+<td>Hash of dnsmasq config</td>
+<td><tt>See attribute file</tt></td>
+</tr>
+<tr>
+<td><tt>['kali']['rogue-ap']['hostapd']</tt></td>
+<td>Hash</td>
+<td>Hash of hostapd config</td>
+<td><tt>See attribute file</tt></td>
+</tr>
+</table>
+
 Usage
 -----
 #### kali::default
@@ -72,7 +118,20 @@ Additionally, you can include the following recipes as your need, these are base
 - `web` - Web assessment tools  
 - `wireless` - Wireless tools  
 
-See the official documentation: http://tools.kali.org/kali-metapackages  
+See the official documentation: http://tools.kali.org/kali-metapackages
+
+#### kali::rogue-ap
+Just include `kali::rogue-ap` in your node's `run_list` to setup a Rogue AP:
+
+```json
+{
+"name":"my_node",
+  "run_list": [
+    "recipe[kali]",
+    "recipe[kali::rogue-ap]"
+  ]
+}
+```
 
 Contributing
 ------------
