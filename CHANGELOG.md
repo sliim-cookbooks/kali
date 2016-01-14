@@ -3,6 +3,10 @@ kali CHANGELOG
 
 This file is used to list changes made in each version of the kali cookbook.
 
+0.3.0
+-----
+- Add `kali_release` automatic attribute.
+
 0.2.1
 -----
 - New recipe `kali::rogue-ap` to setup a Rogue AP
