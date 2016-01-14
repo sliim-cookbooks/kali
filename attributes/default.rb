@@ -16,6 +16,8 @@
 # limitations under the License.
 #
 
+default['ohai']['plugins']['kali'] = 'plugins'
+
 default['kali']['distribution'] = 'sana'
 default['kali']['keyserver'] = 'pgp.mit.edu'
 default['kali']['apt_timeout'] = 1800

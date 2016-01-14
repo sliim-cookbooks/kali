@@ -21,6 +21,7 @@ recipe 'kali::web', 'Install WebApp Assessment tools'
 recipe 'kali::wireless', 'Install wireless tools'
 
 depends 'apt'
+depends 'ohai'
 
 supports 'debian'
 
