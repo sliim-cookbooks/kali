@@ -19,6 +19,7 @@ recipe 'kali::top10', 'Install Top 10 Kali linux tools'
 recipe 'kali::voip', 'Install VoIP tools'
 recipe 'kali::web', 'Install WebApp Assessment tools'
 recipe 'kali::wireless', 'Install wireless tools'
+recipe 'kali::openvas', 'Basic openvas-setup'
 
 depends 'apt'
 depends 'ohai'

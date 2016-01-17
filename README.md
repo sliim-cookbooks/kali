@@ -138,6 +138,19 @@ Just include `kali::rogue-ap` in your node's `run_list` to setup a Rogue AP:
 }
 ```
 
+#### kali::openvas
+Install openvas and run `openvas-setup` by including `kali::openvas` in your node's `run_list`:
+
+```json
+{
+"name":"my_node",
+  "run_list": [
+    "recipe[kali]",
+    "recipe[kali::openvas]"
+  ]
+}
+```
+
 Contributing
 ------------
 1. Fork the repository on Github
