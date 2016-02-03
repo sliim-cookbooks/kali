@@ -31,6 +31,12 @@ Attributes
 <td><tt>sana</tt></td>
 </tr>
 <tr>
+<td><tt>['kali']['security_distribution']</tt></td>
+<td>String</td>
+<td>Distribution to use for security repository updates</td>
+<td><tt>sana/updates</tt></td>
+</tr>
+<tr>
 <td><tt>['kali']['keyserver']</tt></td>
 <td>String</td>
 <td>GPG keys server</td>

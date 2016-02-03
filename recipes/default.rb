@@ -30,7 +30,7 @@ unless node['platform_version'].start_with?('Kali')
 
   apt_repository 'kali-security' do
     uri 'http://security.kali.org/kali-security'
-    distribution "#{node['kali']['distribution']}/updates"
+    distribution node['kali']['security_distribution']
     components ['main', 'non-free', 'contrib']
     deb_src false
     keyserver node['kali']['keyserver']
