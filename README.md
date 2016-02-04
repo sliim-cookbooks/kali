@@ -17,84 +17,22 @@ The following platforms and versions are tested and supported using Opscode's te
 Attributes
 ----------
 #### kali::default
-<table>
-<tr>
-<th>Key</th>
-<th>Type</th>
-<th>Description</th>
-<th>Default</th>
-</tr>
-<tr>
-<td><tt>['kali']['distribution']</tt></td>
-<td>String</td>
-<td>Distribution to use for apt repository</td>
-<td><tt>sana</tt></td>
-</tr>
-<tr>
-<td><tt>['kali']['security_distribution']</tt></td>
-<td>String</td>
-<td>Distribution to use for security repository updates</td>
-<td><tt>sana/updates</tt></td>
-</tr>
-<tr>
-<td><tt>['kali']['keyserver']</tt></td>
-<td>String</td>
-<td>GPG keys server</td>
-<td><tt>pgp.mit.edu</tt></td>
-</tr>
-<tr>
-<td><tt>['kali']['apt_timeout']</tt></td>
-<td>Interger</td>
-<td>Timeout for packages installation</td>
-<td><tt>1800</tt></td>
-</tr>
-</table>
+|  Key                            |  Type   |  Description                                                           |
+| ------------------------------- | ------- | ---------------------------------------------------------------------- |
+| `[kali][distribution]`          | String  | Distribution to use for apt repository (default: `sana`)               |
+| `[kali][security_distribution]` | String  | Distribution for security repository updates (default: `sana/updates`) |
+| `[kali][keyserver]`             | String  | GPG keys server (default: `pgp.mit.edu`)                               |
+| `[kali][apt_timeout]`           | Integer | Timeout for packages installation (default: `1800`)                    |
 
 #### kali::rogue-ap
-<table>
-<tr>
-<th>Key</th>
-<th>Type</th>
-<th>Description</th>
-<th>Default</th>
-</tr>
-<tr>
-<td><tt>['kali']['rogue-ap'][interface']</tt></td>
-<td>String</td>
-<td>Wireles interface</td>
-<td><tt>wlan0</tt></td>
-</tr>
-<tr>
-<td><tt>['kali']['rogue-ap']['out_interface']</tt></td>
-<td>String</td>
-<td>Output interface</td>
-<td><tt>eth0</tt></td>
-</tr>
-<tr>
-<td><tt>['kali']['rogue-ap']['script_path']</tt></td>
-<td>String</td>
-<td>Path for rogue-ap.sh script</td>
-<td><tt>/root/rogue-ap.sh</tt></td>
-</tr>
-<tr>
-<td><tt>['kali']['rogue-ap']['packages']</tt></td>
-<td>Array</td>
-<td>List of packages to install</td>
-<td><tt>See attribute file</tt></td>
-</tr>
-<tr>
-<td><tt>['kali']['rogue-ap']['dnsmasq']</tt></td>
-<td>Hash</td>
-<td>Hash of dnsmasq config</td>
-<td><tt>See attribute file</tt></td>
-</tr>
-<tr>
-<td><tt>['kali']['rogue-ap']['hostapd']</tt></td>
-<td>Hash</td>
-<td>Hash of hostapd config</td>
-<td><tt>See attribute file</tt></td>
-</tr>
-</table>
+|  Key                                |  Type   |  Description                                                  |
+| ----------------------------------- | ------- | ------------------------------------------------------------- |
+| `[kali]['rogue-ap'][interface]`     | String  | Wireles interface (default: `wlan0`)                          |
+| `[kali]['rogue-ap'][out_interface]` | String  | Output interface (default: `eth0`)                            |
+| `[kali]['rogue-ap'][script_path]`   | String  | Path for rogue-ap.sh (default: `/root/rogue-ap.sh`)           |
+| `[kali]['rogue-ap'][packages]`      | Array   | List of packages to install. See attribute file for default   |
+| `[kali]['rogue-ap'][dnsmasq]`       | Hash    | Hash of dnsmasq configuration. See attribute file for default |
+| `[kali]['rogue-ap'][hostapd]`       | Hash    | Hash of hostapd configuration. See attribute file for default |
 
 #### Automatic Attribute
 The `kali::default` recipe will add an automatic attribute in your node named `kali_release`.
