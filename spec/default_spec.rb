@@ -3,26 +3,20 @@
 require_relative 'spec_helper'
 
 describe 'kali::default' do
-  subject { ChefSpec::ServerRunner.new.converge(described_recipe) }
+  subject { ChefSpec::SoloRunner.new.converge(described_recipe) }
 
   it 'adds apt_repository[kali]' do
     expect(subject).to add_apt_repository('kali')
       .with(uri: 'http://http.kali.org/kali',
-            distribution: 'sana',
+            distribution: 'kali-rolling',
             components: ['main', 'non-free', 'contrib'],
             deb_src: true,
             keyserver: 'pgp.mit.edu',
             key: 'ED444FF07D8D0BF6')
   end
 
-  it 'adds apt_repository[kali-security]' do
-    expect(subject).to add_apt_repository('kali-security')
-      .with(uri: 'http://security.kali.org/kali-security',
-            distribution: 'sana/updates',
-            components: ['main', 'non-free', 'contrib'],
-            deb_src: false,
-            keyserver: 'pgp.mit.edu',
-            key: 'ED444FF07D8D0BF6')
+  it 'not adds apt_repository[kali-security]' do
+    expect(subject).to_not add_apt_repository('kali-security')
   end
 
   it 'adds apt_preference[kali]' do
@@ -34,5 +28,23 @@ describe 'kali::default' do
 
   it 'installs package[kali-linux]' do
     expect(subject).to install_package('kali-linux').with(timeout: 1800)
+  end
+
+  context 'with security updates' do
+    let(:subject) do
+      ChefSpec::SoloRunner.new do |node|
+        node.set['kali']['security_distribution'] = 'sana/updates'
+      end.converge described_recipe
+    end
+
+    it 'adds apt_repository[kali-security]' do
+      expect(subject).to add_apt_repository('kali-security')
+        .with(uri: 'http://security.kali.org/kali-security',
+              distribution: 'sana/updates',
+              components: ['main', 'non-free', 'contrib'],
+              deb_src: false,
+              keyserver: 'pgp.mit.edu',
+              key: 'ED444FF07D8D0BF6')
+    end
   end
 end

@@ -35,6 +35,7 @@ unless node['platform_version'].start_with?('Kali')
     deb_src false
     keyserver node['kali']['keyserver']
     key 'ED444FF07D8D0BF6'
+    only_if { node['kali']['security_distribution'] }
   end
 
   apt_preference 'kali' do
