@@ -3,6 +3,10 @@ kali CHANGELOG
 
 This file is used to list changes made in each version of the kali cookbook.
 
+1.0.0
+-----
+- Default setup for kali-rolling
+
 0.3.1
 -----
 - Add `[kali][security_distribution]` attribute.
