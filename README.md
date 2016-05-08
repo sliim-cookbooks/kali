@@ -25,14 +25,19 @@ Attributes
 | `[kali][apt_timeout]`           | Integer | Timeout for packages installation (default: `1800`)                    |
 
 #### kali::rogue-ap
-|  Key                                |  Type   |  Description                                                  |
-| ----------------------------------- | ------- | ------------------------------------------------------------- |
-| `[kali]['rogue-ap'][interface]`     | String  | Wireles interface (default: `wlan0`)                          |
-| `[kali]['rogue-ap'][out_interface]` | String  | Output interface (default: `eth0`)                            |
-| `[kali]['rogue-ap'][script_path]`   | String  | Path for rogue-ap.sh (default: `/root/rogue-ap.sh`)           |
-| `[kali]['rogue-ap'][packages]`      | Array   | List of packages to install. See attribute file for default   |
-| `[kali]['rogue-ap'][dnsmasq]`       | Hash    | Hash of dnsmasq configuration. See attribute file for default |
-| `[kali]['rogue-ap'][hostapd]`       | Hash    | Hash of hostapd configuration. See attribute file for default |
+|  Key                              |  Type   |  Description                                                  |
+| --------------------------------- | ------- | ------------------------------------------------------------- |
+| `[kali][rogue-ap][interface]`     | String  | Wireles interface (default: `wlan0`)                          |
+| `[kali][rogue-ap][out_interface]` | String  | Output interface (default: `eth0`)                            |
+| `[kali][rogue-ap][script_path]`   | String  | Path for rogue-ap.sh (default: `/root/rogue-ap.sh`)           |
+| `[kali][rogue-ap][packages]`      | Array   | List of packages to install. See attribute file for default   |
+| `[kali][rogue-ap][dnsmasq]`       | Hash    | Hash of dnsmasq configuration. See attribute file for default |
+| `[kali][rogue-ap][hostapd]`       | Hash    | Hash of hostapd configuration. See attribute file for default |
+
+#### kali::openvas
+|  Key                           |  Type   |  Description                                                      |
+| ------------------------------ | ------- | ----------------------------------------------------------------- |
+| `[kali]['openvas'][run_setup]` | Boolean | Setup Openvas after installed, take many time! (default: `false`) |
 
 #### Automatic Attribute
 The `kali::default` recipe will add an automatic attribute in your node named `kali_release`.

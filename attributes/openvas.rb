@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #
 # Cookbook Name:: kali
-# Recipe:: openvas
+# Attributes:: openvas
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -16,9 +16,4 @@
 # limitations under the License.
 #
 
-package 'openvas'
-
-if node['kali']['openvas']['run_setup']
-  Chef::Log.warn('Starting Openvas setup, this may take a while..')
-  execute 'openvas-setup'
-end
+default['kali']['openvas']['run_setup'] = false
