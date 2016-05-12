@@ -35,7 +35,7 @@ namespace :test do
   end
 
   task :foodcritic do
-    bundle_exec 'foodcritic -f any --tags ~FC009 .'
+    bundle_exec 'foodcritic .'
   end
 
   task :rubocop do
