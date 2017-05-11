@@ -20,6 +20,7 @@ recipe 'kali::voip', 'Install VoIP tools'
 recipe 'kali::web', 'Install WebApp Assessment tools'
 recipe 'kali::wireless', 'Install wireless tools'
 recipe 'kali::openvas', 'Basic openvas-setup'
+recipe 'kali::disable_lightdm', 'Disable lightdm service'
 
 depends 'apt'
 depends 'ohai'

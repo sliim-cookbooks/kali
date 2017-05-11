@@ -74,6 +74,9 @@ Additionally, you can include the following recipes as your need, these are base
 
 See the official documentation: http://tools.kali.org/kali-metapackages
 
+Some services can be disabled with following recipes:
+- `kali::disable_lightdm` - Disable lightdm service  
+
 #### kali::rogue-ap
 Just include `kali::rogue-ap` in your node's `run_list` to setup a Rogue AP:
 
