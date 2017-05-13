@@ -3,6 +3,10 @@ kali CHANGELOG
 
 This file is used to list changes made in each version of the kali cookbook.
 
+1.1.0
+-----
+- Add `kali::disable_lightdm` recipe
+
 1.0.1
 -----
 - kali::openvas Do not setup openvas by default
