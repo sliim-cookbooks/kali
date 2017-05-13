@@ -1,9 +1,10 @@
 name 'kali'
 maintainer 'Sliim'
 maintainer_email 'sliim@mailoo.org'
-license 'Apache 2.0'
+license 'Apache-2.0'
 description 'Installs/Configures Kali linux'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
+chef_version '>= 12.5' if respond_to?(:chef_version)
 version '1.0.1'
 
 recipe 'kali::all', 'Install all available packages in Kali linux'
