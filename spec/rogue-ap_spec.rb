@@ -52,7 +52,7 @@ describe 'kali::rogue-ap' do
             mode: '0755',
             variables: {
               interface: 'wlan0',
-              out_interface: 'eth0'
+              out_interface: 'eth0',
             })
   end
 end
