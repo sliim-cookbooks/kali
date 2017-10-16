@@ -25,7 +25,6 @@ recipe 'kali::openvas', 'Basic openvas-setup'
 recipe 'kali::disable_lightdm', 'Disable lightdm service'
 
 depends 'apt'
-depends 'ohai'
 
 supports 'debian'
 

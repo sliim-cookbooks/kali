@@ -7,7 +7,6 @@ Requirements
 ------------
 #### cookbooks
 - `apt` - https://supermarket.getchef.com/cookbooks/apt
-- `ohai` - https://supermarket.getchef.com/cookbooks/ohai
 
 #### platforms
 The following platforms and versions are tested and supported using Opscode's test-kitchen.  
@@ -38,10 +37,6 @@ Attributes
 |  Key                           |  Type   |  Description                                                      |
 | ------------------------------ | ------- | ----------------------------------------------------------------- |
 | `[kali]['openvas'][run_setup]` | Boolean | Setup Openvas after installed, take many time! (default: `false`) |
-
-#### Automatic Attribute
-The `kali::default` recipe will add an automatic attribute in your node named `kali_release`.
-This attribute contains the current Kali release of your machine, This value is gathered from `/etc/issue` file.
 
 Usage
 -----
