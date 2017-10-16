@@ -64,6 +64,7 @@ Additionally, you can include the following recipes as your need, these are base
 - `forensic` - Forensic tools  
 - `full` - Default Kali linux install  
 - `gpu` - GPU-Powered tools  
+- `hud` - Deploy kalihud script  
 - `pwtools` - Password Cracking tools  
 - `rfid` - RFID tools  
 - `sdr` - Software Defined Radio tools  
