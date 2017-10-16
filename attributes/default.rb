@@ -16,8 +16,6 @@
 # limitations under the License.
 #
 
-default['ohai']['plugins']['kali'] = 'plugins'
-
 default['kali']['distribution'] = 'kali-rolling'
 default['kali']['security_distribution'] = nil
 default['kali']['keyserver'] = 'pgp.mit.edu'

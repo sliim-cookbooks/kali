@@ -50,4 +50,6 @@ package 'kali-linux' do
   timeout node['kali']['apt_timeout']
 end
 
-include_recipe 'ohai'
+ohai_plugin 'kali' do
+  path 'plugins'
+end
