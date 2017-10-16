@@ -3,10 +3,7 @@
 require_relative 'spec_helper'
 
 describe 'kali::hud' do
-  let(:subject) do
-    ChefSpec::SoloRunner.new(platform: 'debian',
-                             version: '9.0').converge(described_recipe)
-  end
+  subject { ChefSpec::SoloRunner.new.converge(described_recipe) }
 
   it 'installs package[bc]' do
     expect(subject).to install_package('bc')

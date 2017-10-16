@@ -3,7 +3,7 @@
 require_relative 'spec_helper'
 
 describe 'kali::wireless' do
-  subject { ChefSpec::ServerRunner.new.converge(described_recipe) }
+  subject { ChefSpec::SoloRunner.new.converge(described_recipe) }
 
   it 'installs package[kali-linux-wireless]' do
     expect(subject).to install_package('kali-linux-wireless')

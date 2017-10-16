@@ -3,7 +3,7 @@
 require_relative 'spec_helper'
 
 describe 'kali::rogue-ap' do
-  subject { ChefSpec::ServerRunner.new.converge(described_recipe) }
+  subject { ChefSpec::SoloRunner.new.converge(described_recipe) }
 
   %w(hostapd dnsmasq wireless-tools iw wvdial).each do |pkg|
     it "installs package[#{pkg}]" do
