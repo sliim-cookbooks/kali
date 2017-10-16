@@ -14,8 +14,7 @@ describe 'kali::default' do
             distribution: 'kali-rolling',
             components: ['main', 'non-free', 'contrib'],
             deb_src: true,
-            keyserver: 'pgp.mit.edu',
-            key: 'ED444FF07D8D0BF6')
+            keyserver: 'pgp.mit.edu')
   end
 
   it 'not adds apt_repository[kali-security]' do
@@ -46,8 +45,7 @@ describe 'kali::default' do
               distribution: 'sana/updates',
               components: ['main', 'non-free', 'contrib'],
               deb_src: false,
-              keyserver: 'pgp.mit.edu',
-              key: 'ED444FF07D8D0BF6')
+              keyserver: 'pgp.mit.edu')
     end
   end
 end
