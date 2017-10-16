@@ -3,7 +3,10 @@
 require_relative 'spec_helper'
 
 describe 'kali::rogue-ap' do
-  subject { ChefSpec::SoloRunner.new.converge(described_recipe) }
+  let(:subject) do
+    ChefSpec::SoloRunner.new(platform: 'debian',
+                             version: '9.0').converge(described_recipe)
+  end
 
   %w(hostapd dnsmasq wireless-tools iw wvdial).each do |pkg|
     it "installs package[#{pkg}]" do

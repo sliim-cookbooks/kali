@@ -3,7 +3,10 @@
 require_relative 'spec_helper'
 
 describe 'kali::openvas' do
-  subject { ChefSpec::SoloRunner.new.converge(described_recipe) }
+  let(:subject) do
+    ChefSpec::SoloRunner.new(platform: 'debian',
+                             version: '9.0').converge(described_recipe)
+  end
 
   it 'installs package[openvas]' do
     expect(subject).to install_package('openvas')
@@ -15,8 +18,8 @@ describe 'kali::openvas' do
 
   context 'setup enabled' do
     let(:subject) do
-      ChefSpec::SoloRunner.new do |node|
-        node.set['kali']['openvas']['run_setup'] = true
+      ChefSpec::SoloRunner.new(platform: 'debian', version: '9.0') do |node|
+        node.override['kali']['openvas']['run_setup'] = true
       end.converge(described_recipe)
     end
 
