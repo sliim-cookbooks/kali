@@ -6,8 +6,8 @@ set :backend, :exec
 describe file('/etc/apt/sources.list.d/kali.list') do
   it { should be_file }
 
-  [%r{deb-src "http://http.kali.org/kali" sana main non-free contrib},
-   %r{deb *"http://http.kali.org/kali" sana main non-free contrib}].each do |m|
+  [%r{deb-src "https://http.kali.org/kali" sana main non-free contrib},
+   %r{deb *"https://http.kali.org/kali" sana main non-free contrib}].each do |m|
     its(:content) { should match(m) }
   end
 end
@@ -16,7 +16,7 @@ describe file('/etc/apt/sources.list.d/kali-security.list') do
   it { should be_file }
   its(:content) do
     should match(
-      %r{deb *"http://security.kali.org/kali-security" sana/updates*}
+      %r{deb *"https://security.kali.org/kali-security" sana/updates*}
     )
   end
 end

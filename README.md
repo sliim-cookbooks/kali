@@ -68,7 +68,7 @@ Additionally, you can include the following recipes as your need, these are base
 - `web` - Web assessment tools  
 - `wireless` - Wireless tools  
 
-See the official documentation: http://tools.kali.org/kali-metapackages
+See the official documentation: https://tools.kali.org/kali-metapackages
 
 Some services can be disabled with following recipes:
 - `kali::disable_lightdm` - Disable lightdm service  

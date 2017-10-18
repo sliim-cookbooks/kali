@@ -10,7 +10,7 @@ describe 'kali::default' do
 
   it 'adds apt_repository[kali]' do
     expect(subject).to add_apt_repository('kali')
-      .with(uri: 'http://http.kali.org/kali',
+      .with(uri: 'https://http.kali.org/kali',
             distribution: 'kali-rolling',
             components: ['main', 'non-free', 'contrib'],
             deb_src: true,
@@ -41,7 +41,7 @@ describe 'kali::default' do
 
     it 'adds apt_repository[kali-security]' do
       expect(subject).to add_apt_repository('kali-security')
-        .with(uri: 'http://security.kali.org/kali-security',
+        .with(uri: 'https://security.kali.org/kali-security',
               distribution: 'sana/updates',
               components: ['main', 'non-free', 'contrib'],
               deb_src: false,

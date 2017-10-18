@@ -18,13 +18,17 @@
 
 include_recipe 'apt'
 
+package 'apt-transport-https'
+
 apt_repository 'kali' do
-  uri 'http://http.kali.org/kali'
+  uri 'https://http.kali.org/kali'
   distribution node['kali']['distribution']
   components ['main', 'non-free', 'contrib']
   deb_src true
   keyserver node['kali']['keyserver']
   key 'ED444FF07D8D0BF6'
+  not_if 'grep -E "^deb( )+(\")?http(s)?://http.kali.org" /etc/apt/sources.list'
+  not_if 'grep -E "^deb( )+(\")?\"http(s)?://http.kali.org" /etc/apt/sources.list.d/kali.list'
 end
 
 apt_preference 'kali' do
@@ -33,15 +37,14 @@ apt_preference 'kali' do
   pin_priority '700'
 end
 
-if node['kali']['security_distribution']
-  apt_repository 'kali-security' do
-    uri 'http://security.kali.org/kali-security'
-    distribution node['kali']['security_distribution']
-    components ['main', 'non-free', 'contrib']
-    deb_src false
-    keyserver node['kali']['keyserver']
-    key 'ED444FF07D8D0BF6'
-  end
+apt_repository 'kali-security' do
+  uri 'https://security.kali.org/kali-security'
+  distribution node['kali']['security_distribution']
+  components ['main', 'non-free', 'contrib']
+  deb_src false
+  keyserver node['kali']['keyserver']
+  key 'ED444FF07D8D0BF6'
+  only_if { node['kali']['security_distribution'] }
 end
 
 package 'kali-linux' do
