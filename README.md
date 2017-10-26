@@ -1,7 +1,6 @@
 kali Cookbook | [![Cookbook Version](https://img.shields.io/cookbook/v/kali.svg)](https://community.opscode.com/cookbooks/kali) [![Build Status](https://travis-ci.org/sliim-cookbooks/kali.svg?branch=master)](https://travis-ci.org/sliim-cookbooks/kali) 
 ==============
-This cookbook installs and configures kali linux for debian OS.  
-It provides an easy way to manage your pentest environment with Chef!
+This cookbook installs and configures Kali linux on debian OS.
 
 Requirements
 ------------
@@ -10,7 +9,6 @@ Requirements
 
 #### platforms
 The following platforms and versions are tested and supported using Opscode's test-kitchen.  
-- `Debian 7`
 - `Debian 8`
 - `Debian 9`
 
@@ -20,7 +18,7 @@ Attributes
 |  Key                   |  Type   |  Description                                                           |
 | ---------------------- | ------- | ---------------------------------------------------------------------- |
 | `[kali][distribution]` | String  | Distribution to use for apt repository (default: `kali-rolling`)       |
-| `[kali][components]`   | String  | Repository components (default: `['main', 'non-free', 'contrib']`)     |
+| `[kali][components]`   | String  | Repository components (default: `[main, non-free, contrib]`)     |
 | `[kali][keyserver]`    | String  | GPG keys server (default: `pgp.mit.edu`)                               |
 | `[kali][apt_timeout]`  | Integer | Timeout for packages installation (default: `1800`)                    |
 
@@ -35,9 +33,9 @@ Attributes
 | `[kali][rogue-ap][hostapd]`       | Hash    | Hash of hostapd configuration. See attribute file for default |
 
 #### kali::openvas
-|  Key                           |  Type   |  Description                                                      |
-| ------------------------------ | ------- | ----------------------------------------------------------------- |
-| `[kali]['openvas'][run_setup]` | Boolean | Setup Openvas after installed, take many time! (default: `false`) |
+|  Key                         |  Type   |  Description                                                      |
+| ---------------------------- | ------- | ----------------------------------------------------------------- |
+| `[kali][openvas][run_setup]` | Boolean | Setup Openvas after installed, take many time! (default: `false`) |
 
 Usage
 -----
@@ -100,14 +98,25 @@ Install openvas and run `openvas-setup` by including `kali::openvas` in your nod
 }
 ```
 
+#### kali::hud
+Install kalihud script:
+
+```json
+{
+"name":"my_node",
+  "run_list": [
+    "recipe[kali::hud]"
+  ]
+}
+```
+
+Testing
+-------
+See [TESTING.md](TESTING.md)
+
 Contributing
 ------------
-1. Fork the repository on Github
-2. Create a named feature branch (like `add_component_x`)
-3. Write your change
-4. Write tests for your change (if applicable)
-5. Run the tests, ensuring they all pass
-6. Submit a Pull Request using Github
+See [CONTRIBUTING.md](CONTRIBUTING.md)
 
 License and Authors
 -------------------
