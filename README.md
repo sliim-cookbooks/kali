@@ -10,18 +10,19 @@ Requirements
 
 #### platforms
 The following platforms and versions are tested and supported using Opscode's test-kitchen.  
-- `Debian 7.6`
-- `Debian 8.1`
+- `Debian 7`
+- `Debian 8`
+- `Debian 9`
 
 Attributes
 ----------
 #### kali::default
-|  Key                            |  Type   |  Description                                                           |
-| ------------------------------- | ------- | ---------------------------------------------------------------------- |
-| `[kali][distribution]`          | String  | Distribution to use for apt repository (default: `sana`)               |
-| `[kali][security_distribution]` | String  | Distribution for security repository updates (default: `sana/updates`) |
-| `[kali][keyserver]`             | String  | GPG keys server (default: `pgp.mit.edu`)                               |
-| `[kali][apt_timeout]`           | Integer | Timeout for packages installation (default: `1800`)                    |
+|  Key                   |  Type   |  Description                                                           |
+| ---------------------- | ------- | ---------------------------------------------------------------------- |
+| `[kali][distribution]` | String  | Distribution to use for apt repository (default: `kali-rolling`)       |
+| `[kali][components]`   | String  | Repository components (default: `['main', 'non-free', 'contrib']`)     |
+| `[kali][keyserver]`    | String  | GPG keys server (default: `pgp.mit.edu`)                               |
+| `[kali][apt_timeout]`  | Integer | Timeout for packages installation (default: `1800`)                    |
 
 #### kali::rogue-ap
 |  Key                              |  Type   |  Description                                                  |

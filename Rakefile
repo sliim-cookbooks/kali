@@ -47,7 +47,7 @@ namespace :test do
   end
 
   task :kitchen do
-    bundle_exec 'kitchen test'
+    bundle_exec 'kitchen test --concurrency'
   end
 end
 

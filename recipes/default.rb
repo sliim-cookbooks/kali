@@ -23,7 +23,7 @@ package 'apt-transport-https'
 apt_repository 'kali' do
   uri 'https://http.kali.org/kali'
   distribution node['kali']['distribution']
-  components ['main', 'non-free', 'contrib']
+  components node['kali']['components']
   deb_src true
   keyserver node['kali']['keyserver']
   key 'ED444FF07D8D0BF6'
@@ -35,16 +35,6 @@ apt_preference 'kali' do
   glob '*'
   pin 'origin http.kali.org'
   pin_priority '700'
-end
-
-apt_repository 'kali-security' do
-  uri 'https://security.kali.org/kali-security'
-  distribution node['kali']['security_distribution']
-  components ['main', 'non-free', 'contrib']
-  deb_src false
-  keyserver node['kali']['keyserver']
-  key 'ED444FF07D8D0BF6'
-  only_if { node['kali']['security_distribution'] }
 end
 
 package 'kali-linux' do

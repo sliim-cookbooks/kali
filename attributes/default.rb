@@ -17,6 +17,6 @@
 #
 
 default['kali']['distribution'] = 'kali-rolling'
-default['kali']['security_distribution'] = nil
+default['kali']['components'] = ['main', 'non-free', 'contrib']
 default['kali']['keyserver'] = 'pgp.mit.edu'
 default['kali']['apt_timeout'] = 1800

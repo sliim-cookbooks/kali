@@ -1,0 +1,23 @@
+---
+driver:
+  name: docker
+  require_chef_omnibus: true
+  use_sudo: false
+
+provisioner:
+  name: chef_zero
+  require_chef_omnibus: 13
+
+verifier:
+  name: inspec
+
+platforms:
+  - name: debian-8
+  - name: debian-9
+
+suites:
+  - name: default
+    run_list:
+      - recipe[apt]
+      - recipe[kali_test::requirements]
+      - recipe[kali]

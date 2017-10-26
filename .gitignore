@@ -4,3 +4,5 @@ Gemfile.lock
 .kitchen.local.yml
 .kitchen.key
 .project
+/.bundle
+/vendor

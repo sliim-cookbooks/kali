@@ -8,6 +8,10 @@ describe 'kali::default' do
                              version: '9.0').converge(described_recipe)
   end
 
+  before do
+    stub_command(%r{grep -E .* /etc/apt/sources.list}).and_return(false)
+  end
+
   it 'adds apt_repository[kali]' do
     expect(subject).to add_apt_repository('kali')
       .with(uri: 'https://http.kali.org/kali',
@@ -15,10 +19,6 @@ describe 'kali::default' do
             components: ['main', 'non-free', 'contrib'],
             deb_src: true,
             keyserver: 'pgp.mit.edu')
-  end
-
-  it 'not adds apt_repository[kali-security]' do
-    expect(subject).to_not add_apt_repository('kali-security')
   end
 
   it 'adds apt_preference[kali]' do
@@ -30,22 +30,5 @@ describe 'kali::default' do
 
   it 'installs package[kali-linux]' do
     expect(subject).to install_package('kali-linux').with(timeout: 1800)
-  end
-
-  context 'with security updates' do
-    let(:subject) do
-      ChefSpec::SoloRunner.new(platform: 'debian', version: '9.0') do |node|
-        node.override['kali']['security_distribution'] = 'sana/updates'
-      end.converge(described_recipe)
-    end
-
-    it 'adds apt_repository[kali-security]' do
-      expect(subject).to add_apt_repository('kali-security')
-        .with(uri: 'https://security.kali.org/kali-security',
-              distribution: 'sana/updates',
-              components: ['main', 'non-free', 'contrib'],
-              deb_src: false,
-              keyserver: 'pgp.mit.edu')
-    end
   end
 end

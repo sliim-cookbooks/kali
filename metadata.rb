@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 name 'kali'
 maintainer 'Sliim'
 maintainer_email 'sliim@mailoo.org'
