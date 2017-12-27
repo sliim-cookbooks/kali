@@ -20,3 +20,28 @@ default['kali']['distribution'] = 'kali-rolling'
 default['kali']['components'] = ['main', 'non-free', 'contrib']
 default['kali']['keyserver'] = 'pgp.mit.edu'
 default['kali']['apt_timeout'] = 1800
+
+# kali::openvas
+default['kali']['openvas']['run_setup'] = false
+
+# kali::rogue-ap
+default['kali']['rogue-ap']['interface'] = 'wlan0'
+default['kali']['rogue-ap']['out_interface'] = 'eth0'
+default['kali']['rogue-ap']['script_path'] = '/root/rogue-ap.sh'
+default['kali']['rogue-ap']['packages'] = ['hostapd',
+                                           'dnsmasq',
+                                           'wireless-tools',
+                                           'iw', 'wvdial']
+default['kali']['rogue-ap']['dnsmasq'] = {
+  'log-facility' => '/var/log/dnsmasq.log',
+  'interface' => node['kali']['rogue-ap']['interface'],
+  'dhcp-range' => '10.0.0.10,10.0.0.250,12h',
+  'dhcp-option' => ['3,10.0.0.1', '6,10.0.0.1'],
+}
+
+default['kali']['rogue-ap']['hostapd'] = {
+  'interface' => node['kali']['rogue-ap']['interface'],
+  'driver' => 'nl80211',
+  'ssid' => 'FreeWifi',
+  'channel' => 1,
+}
