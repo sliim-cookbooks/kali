@@ -18,4 +18,5 @@
 
 package 'kali-linux-voip' do
   timeout node['kali']['apt_timeout']
+  action :upgrade if node['kali']['upgrade']
 end

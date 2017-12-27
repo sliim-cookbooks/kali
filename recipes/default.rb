@@ -39,4 +39,5 @@ end
 
 package 'kali-linux' do
   timeout node['kali']['apt_timeout']
+  action :upgrade if node['kali']['upgrade']
 end

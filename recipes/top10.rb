@@ -18,4 +18,5 @@
 
 package 'kali-linux-top10' do
   timeout node['kali']['apt_timeout']
+  action :upgrade if node['kali']['upgrade']
 end

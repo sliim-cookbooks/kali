@@ -20,6 +20,7 @@ default['kali']['distribution'] = 'kali-rolling'
 default['kali']['components'] = ['main', 'non-free', 'contrib']
 default['kali']['keyserver'] = 'pgp.mit.edu'
 default['kali']['apt_timeout'] = 1800
+default['kali']['upgrade'] = false
 
 # kali::hud
 default['kali']['hud']['services'] = {}

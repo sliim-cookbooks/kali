@@ -18,9 +18,10 @@ Attributes
 |  Key                   |  Type   |  Description                                                           |
 | ---------------------- | ------- | ---------------------------------------------------------------------- |
 | `[kali][distribution]` | String  | Distribution to use for apt repository (default: `kali-rolling`)       |
-| `[kali][components]`   | String  | Repository components (default: `[main, non-free, contrib]`)     |
+| `[kali][components]`   | String  | Repository components (default: `[main, non-free, contrib]`)           |
 | `[kali][keyserver]`    | String  | GPG keys server (default: `pgp.mit.edu`)                               |
 | `[kali][apt_timeout]`  | Integer | Timeout for packages installation (default: `1800`)                    |
+| `[kali][upgrade]`      | Boolean | Set true to upgrade kali linux metapackages (default: `false`)         |
 
 #### kali::rogue-ap
 |  Key                              |  Type   |  Description                                                  |
@@ -36,6 +37,11 @@ Attributes
 |  Key                         |  Type   |  Description                                                      |
 | ---------------------------- | ------- | ----------------------------------------------------------------- |
 | `[kali][openvas][run_setup]` | Boolean | Setup Openvas after installed, take many time! (default: `false`) |
+
+#### kali::hud
+|  Key                    | Type |  Description                                         |
+| ----------------------- | ---- | ---------------------------------------------------- |
+| `[kali][hud][services]` | Hash | Services list for the kalihud script (default: `{}`) |
 
 Usage
 -----
