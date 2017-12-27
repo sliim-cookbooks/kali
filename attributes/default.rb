@@ -21,6 +21,9 @@ default['kali']['components'] = ['main', 'non-free', 'contrib']
 default['kali']['keyserver'] = 'pgp.mit.edu'
 default['kali']['apt_timeout'] = 1800
 
+# kali::hud
+default['kali']['hud']['services'] = {}
+
 # kali::openvas
 default['kali']['openvas']['run_setup'] = false
 

@@ -21,3 +21,21 @@ suites:
       - recipe[apt]
       - recipe[kali_test::requirements]
       - recipe[kali]
+  - name: hud
+    run_list:
+      - recipe[kali::hud]
+    attributes:
+      kali:
+        hud:
+          services:
+            Metasploit: msfconsole
+            BeEF: ruby .*/beef
+            Faraday: faraday.py
+            Docker: /usr/bin/dockerd
+            SSH: /usr/sbin/sshd
+            Kismet: kismet_server
+            Apache2: /usr/sbin/apache2 -k start
+            PgSQL: bin/postgres -D /var/lib/
+            DHCPD: sbin/dhcpd
+            Hostapd: sbin/hostapd
+            DNSmasq: sbin/dnsmasq

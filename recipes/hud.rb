@@ -18,9 +18,10 @@
 
 package 'bc'
 
-cookbook_file '/usr/local/bin/kalihud' do
+template '/usr/local/bin/kalihud' do
   owner 'root'
   group 'root'
   mode '0755'
-  source 'hud'
+  source 'hud.erb'
+  variables services: node['kali']['hud']['services']
 end

@@ -12,11 +12,12 @@ describe 'kali::hud' do
     expect(subject).to install_package('bc')
   end
 
-  it 'creates cookbook_file[/usr/local/bin/kalihud]' do
-    expect(subject).to create_cookbook_file('/usr/local/bin/kalihud')
+  it 'creates template[/usr/local/bin/kalihud]' do
+    expect(subject).to create_template('/usr/local/bin/kalihud')
       .with(owner: 'root',
             group: 'root',
             mode: '0755',
-            source: 'hud')
+            source: 'hud.erb',
+            variables: { services: {} })
   end
 end
