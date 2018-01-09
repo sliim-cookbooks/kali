@@ -27,10 +27,10 @@ memory=$(cat /proc/meminfo | head -1 | awk '{print $2}')
 memory1=$(echo "scale=3;${memory%/*}/1024/1024" | bc)
 disk=$(df -h | grep -E "\/$" | awk '{print $3}')
 disk1=$(df -h | grep -E "\/$" | awk '{print $2}')
-ram=$(free -m | grep -i "cache:" | awk '{print $3}')MB
+ram=$(free -m | grep -i "mem:" | awk '{print $3}')MB
 ram1=$(free -m | grep -i "mem:" | awk '{print $2}')MB
-status_up="\e[1;92m☢\e[1;34m"
-status_down="\e[1;91m☢\e[0m"
+status_up="\e[1;92m•\e[1;34m"
+status_down="\e[1;91m•\e[0m"
 
 <% count = 0 %>
 <% @services.each do |title, check_cmd| %>
@@ -54,17 +54,17 @@ D8888888888888888888     CPU:\e[0m $cpu\e[1;34m
         888888888888888  Disk:\e[0m $disk\e[1;34m/\e[0m$disk1\e[1;34m
         88888888888DD88
         88888888888N 88D
-        8888888888888ND88   Services:   $service_0\t$service_10
-        N88888888888888888              $service_1\t$service_11
-            D888888888888               $service_2\t$service_12
-                N888888888OD            $service_3\t$service_13
-                   N888888888N          $service_4\t$service_14
-                     N88888888O8N       $service_5\t$service_15
-                       8888888888888DD  $service_6\t$service_16
-                        D8888888888888  $service_7\t$service_17
-                          8888888888D   $service_8\t$service_18
-                           D888888      $service_9\t$service_19
+        8888888888888ND88   Services:   $service_0\t$service_10\e[1;34m
+        N88888888888888888              $service_1\t$service_11\e[1;34m
+            D888888888888               $service_2\t$service_12\e[1;34m
+                N888888888OD            $service_3\t$service_13\e[1;34m
+                   N888888888N          $service_4\t$service_14\e[1;34m
+                     N88888888O8N       $service_5\t$service_15\e[1;34m
+                       8888888888888DD  $service_6\t$service_16\e[1;34m
+                        D8888888888888  $service_7\t$service_17\e[1;34m
+                          8888888888D   $service_8\t$service_18\e[1;34m
+                           D888888      $service_9\t$service_19\e[1;34m
                             8888D
 =======  Networks  ======== N88D\e[0m"
-ip -o a | grep "inet "|grep -v "lo " |awk '{print "=> \033[1;36m" $2 "\033[0m: \033[1;37m" $4 "\033[0m"}'
+ip -o a | grep "inet "|grep -v "lo " |awk '{print "\033[1;34m=> " $2 ": \033[0m" $4}'
 echo
