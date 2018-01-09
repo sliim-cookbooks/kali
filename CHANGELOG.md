@@ -3,6 +3,15 @@ kali CHANGELOG
 
 This file is used to list changes made in each version of the kali cookbook.
 
+2.0.0
+-----
+- Removed support for Kali linux 1.0 & 2.0
+- Add `kali::hud` recipe to deploy the kalihud script
+- Add `[kali][upgrade]` attribute to upgrade metapackages
+- Use https transport for kali repository
+- Removed ohai plugin 
+- Removed `kali_release` automatic attribute 
+
 1.1.0
 -----
 - Add `kali::disable_lightdm` recipe
