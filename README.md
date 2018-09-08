@@ -23,16 +23,6 @@ Attributes
 | `[kali][apt_timeout]`  | Integer | Timeout for packages installation (default: `1800`)                    |
 | `[kali][upgrade]`      | Boolean | Set true to upgrade kali linux metapackages (default: `false`)         |
 
-#### kali::rogue-ap
-|  Key                              |  Type   |  Description                                                  |
-| --------------------------------- | ------- | ------------------------------------------------------------- |
-| `[kali][rogue-ap][interface]`     | String  | Wireles interface (default: `wlan0`)                          |
-| `[kali][rogue-ap][out_interface]` | String  | Output interface (default: `eth0`)                            |
-| `[kali][rogue-ap][script_path]`   | String  | Path for rogue-ap.sh (default: `/root/rogue-ap.sh`)           |
-| `[kali][rogue-ap][packages]`      | Array   | List of packages to install. See attribute file for default   |
-| `[kali][rogue-ap][dnsmasq]`       | Hash    | Hash of dnsmasq configuration. See attribute file for default |
-| `[kali][rogue-ap][hostapd]`       | Hash    | Hash of hostapd configuration. See attribute file for default |
-
 #### kali::openvas
 |  Key                         |  Type   |  Description                                                      |
 | ---------------------------- | ------- | ----------------------------------------------------------------- |
@@ -77,19 +67,6 @@ See the official documentation: https://tools.kali.org/kali-metapackages
 
 Some services can be disabled with following recipes:
 - `kali::disable_lightdm` - Disable lightdm service  
-
-#### kali::rogue-ap
-Just include `kali::rogue-ap` in your node's `run_list` to setup a Rogue AP:
-
-```json
-{
-"name":"my_node",
-  "run_list": [
-    "recipe[kali]",
-    "recipe[kali::rogue-ap]"
-  ]
-}
-```
 
 #### kali::openvas
 Install openvas and run `openvas-setup` by including `kali::openvas` in your node's `run_list`:
