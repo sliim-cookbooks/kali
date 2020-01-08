@@ -4,8 +4,7 @@ require_relative 'spec_helper'
 
 describe 'kali::default' do
   let(:subject) do
-    ChefSpec::SoloRunner.new(platform: 'debian',
-                             version: '9.0').converge(described_recipe)
+    ChefSpec::SoloRunner.new.converge(described_recipe)
   end
 
   before do
@@ -38,8 +37,7 @@ describe 'kali::default' do
 
   context 'with upgrade attribute' do
     let(:subject) do
-      ChefSpec::SoloRunner.new(platform: 'debian',
-                               version: '9.0') do |node|
+      ChefSpec::SoloRunner.new do |node|
         node.override['kali']['upgrade'] = true
       end.converge(described_recipe)
     end
