@@ -9,6 +9,10 @@ describe 'kali::default' do
     stub_command(%r{grep -E .* /etc/apt/sources.list}).and_return(false)
   end
 
+  it 'periodic apt_update' do
+    expect(subject).to periodic_apt_update('')
+  end
+
   it 'installs package[apt-transport-https]' do
     expect(subject).to install_package('apt-transport-https')
   end
