@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 describe file '/usr/local/bin/kalihud' do
   it { should be_file }
   it { should be_executable }

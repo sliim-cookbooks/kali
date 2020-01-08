@@ -1,6 +1,4 @@
-# -*- coding: utf-8 -*-
-#
-# Cookbook Name:: kali
+# Cookbook:: kali
 # Recipe:: default
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,7 +14,7 @@
 # limitations under the License.
 #
 
-include_recipe 'apt'
+apt_update
 
 package 'apt-transport-https'
 

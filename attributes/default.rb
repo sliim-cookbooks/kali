@@ -1,6 +1,4 @@
-# -*- coding: utf-8 -*-
-#
-# Cookbook Name:: kali
+# Cookbook:: kali
 # Attributes:: default
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,7 +15,7 @@
 #
 
 default['kali']['distribution'] = 'kali-rolling'
-default['kali']['components'] = ['main', 'non-free', 'contrib']
+default['kali']['components'] = %w(main non-free contrib)
 default['kali']['keyserver'] = 'pgp.mit.edu'
 default['kali']['apt_timeout'] = 1800
 default['kali']['upgrade'] = false

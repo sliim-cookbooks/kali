@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 describe file '/etc/apt/sources.list.d/kali.list' do
   it { should be_file }
 

@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 require_relative 'spec_helper'
 
 describe 'kali::default' do
@@ -19,7 +17,7 @@ describe 'kali::default' do
     expect(subject).to add_apt_repository('kali')
       .with(uri: 'https://http.kali.org/kali',
             distribution: 'kali-rolling',
-            components: ['main', 'non-free', 'contrib'],
+            components: %w(main non-free contrib),
             deb_src: true,
             keyserver: 'pgp.mit.edu')
   end

@@ -51,10 +51,12 @@ This will add kali linux repositories in apt sources and install the base of Kal
 
 Additionally, you can include the following recipes as your need, these are based on kali linux metapackages:  
 - `all` - All available packages in Kali linux  
+- `kali::disable_lightdm` - Disable lightdm service  
 - `forensic` - Forensic tools  
 - `full` - Default Kali linux install  
 - `gpu` - GPU-Powered tools  
 - `hud` - Deploy kalihud script  
+- `openvas` - Basic openvas setup  
 - `pwtools` - Password Cracking tools  
 - `rfid` - RFID tools  
 - `sdr` - Software Defined Radio tools  
