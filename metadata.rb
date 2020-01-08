@@ -4,7 +4,7 @@ maintainer_email 'sliim@mailoo.org'
 license 'Apache-2.0'
 description 'Installs/Configures Kali linux'
 chef_version '>= 12.7'
-version '2.0.0'
+version '2.1.0'
 
 depends 'apt'
 

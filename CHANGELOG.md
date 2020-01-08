@@ -3,6 +3,11 @@ kali CHANGELOG
 
 This file is used to list changes made in each version of the kali cookbook.
 
+2.1.0
+-----
+- Removed `kali::rogue-ap` recipe (moved in `pentester` cookbook)
+- CI fixes
+
 2.0.0
 -----
 - Removed support for Kali linux 1.0 & 2.0
